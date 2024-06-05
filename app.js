@@ -9,16 +9,16 @@ app.get('/', (req, res) => {
 
 app.get('/create', async (req, res) => {
     let createdUser = await userModel.create({
-        name: "paru😭",
-        email: "mrunmayee@gmail.com",
-        username: "mrunmayee"
+        name: "abc",
+        email: "abc@example.com",
+        username: "abc123",
     })
     res.send(createdUser);
   });
 
   app.get('/update', async (req, res) => {
 
-    let updatedUser = await userModel.findOneAndUpdate({username: "mrunmayee"}, {name: "mayee"}, {new: true})
+    let updatedUser = await userModel.findOneAndUpdate({username: "abc123"}, {name: "abcde"}, {new: true})
 
     res.send(updatedUser);
 
@@ -30,7 +30,7 @@ app.get('/create', async (req, res) => {
   })
 
   app.get('/delete', async(req, res) =>{
-    let deletedUser = await userModel.findOneAndDelete({name: "paru😭"});
+    let deletedUser = await userModel.findOneAndDelete({name: "abcde"});
     res.send(deletedUser);
   })
 
